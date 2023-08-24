@@ -1,7 +1,6 @@
 .card {
   background-color: var(--secondary-color);
-  margin-left: 10px;
-  margin-right: 10px;
+  width: min-content;
 }
 
 input[type = text], input[type = email] {
@@ -30,4 +29,11 @@ input[type = text], input[type = email] {
 
 h3 {
   color: var(--primary-color);
+}
+
+.centered-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
 }
