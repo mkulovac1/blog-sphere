@@ -11,12 +11,14 @@ import { Category } from '../models/category';
 export class CategoriesComponent {
 
   categoryArray: Array<object>
+  formCategory: string
+  formStatus: string = 'Add'
 
   constructor(private categoryService: CategoriesService) { }
 
   ngOnInit() : void {
     this.categoryService.loadData().subscribe(x => {
-      console.log(x)
+      // console.log(x)
       this.categoryArray = x
     })
   }
@@ -31,4 +33,9 @@ export class CategoriesComponent {
     formData.reset()
   }
 
+  onEdit(category) {
+    // console.log(category)
+    this.formCategory = category
+    this.formStatus = 'Edit'
+  }
 }

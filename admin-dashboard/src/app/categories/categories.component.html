@@ -1,7 +1,7 @@
 <div class="container shadow-effect-card">
   <div class="row-md">
     <div class="col-md">
-      <h3 class="text-center"> New categories </h3>
+      <h3 class="text-center"> {{ formStatus }} categories </h3>
       <p class="text-center mb-5"> You can manage your categories from here! </p>
     </div>
   </div>
@@ -16,7 +16,7 @@
             class="form-control shadow-effect-card"
             placeholder="Add new categories"
             #newCategory='ngModel'
-            ngModel
+            [(ngModel)] = "formCategory"
             required
             [ngClass]="{ 'is-invalid': newCategory.touched && newCategory.invalid }"
             >
@@ -28,7 +28,7 @@
 
         <div class="col-md">
           <button class="btn btn-block btn-info mb-2 roboto-text btn-add-category" [disabled] = "categoryForm.invalid">
-            Add category
+            {{ formStatus }} category
           </button>
         </div>
       </form>
@@ -51,11 +51,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr
-              *ngFor = 'let c of categoryArray; let i = index'>
+            <tr *ngFor = 'let c of categoryArray; let i = index'>
               <td> {{ i + 1}} </td>
               <td> {{ c.data.category }} </td>
-              <td> </td>
+              <td>
+                <button class="btn btn-sm btn-warning" (click)="onEdit(c.data.category)">
+                  Edit
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>

@@ -12,10 +12,10 @@ export class CategoriesService {
 
   saveData(categoryData) {
     this.afs.collection('categories').add(categoryData).then(docRef => {
-      console.log(docRef)
+      // console.log(docRef)
       this.toastr.success('Category added successfully', 'Success')
     }).catch(err => {
-      console.log(err)
+      // console.log(err)
       this.toastr.error('Category not added', 'Error')
     })
   }
