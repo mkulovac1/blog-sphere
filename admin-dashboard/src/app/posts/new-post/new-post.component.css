@@ -1,0 +1,12 @@
+.back-posts-btn {
+  margin-left: 5px;
+}
+
+.container {
+  background-color: var(--secondary-color);
+}
+
+.save-post-btn {
+  background-color: var(--primary-color);
+  color: whitesmoke;
+}
