@@ -1,0 +1,26 @@
+h3 {
+  color: var(--primary-color);
+  font-family: 'Roboto', sans-serif;
+
+}
+
+p {
+  color: var(--body-text-color);
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.btn-add-category {
+  background-color: var(--primary-color);
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  white-space: nowrap;
+}
+
+.container {
+  background-color: var(--secondary-color);
+}
+
+
+
+

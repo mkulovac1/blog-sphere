@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { CategoriesService } from '../services/categories.service';
+import { Category } from '../models/category';
+
 
 @Component({
   selector: 'app-categories',
@@ -6,5 +9,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent {
+
+  constructor(private categoryService: CategoriesService) { }
+
+  ngOnInit() : void {
+
+  }
+
+  onSubmit(formData) {
+    let categoryData: Category = {
+      category: formData.value.category
+    }
+
+    this.categoryService.saveData(categoryData)
+  }
 
 }

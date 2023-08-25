@@ -1,1 +1,37 @@
-<p>categories works!</p>
+<div class="container shadow-effect-card">
+  <div class="row-md">
+    <div class="col-md">
+      <h3 class="text-center"> New categories </h3>
+      <p class="text-center mb-5"> You can manage your categories from here! </p>
+    </div>
+  </div>
+
+  <div class="row-md">
+    <div class="col-md">
+      <form action="" class="form-inline text-center" #categoryForm = 'ngForm' (ngSubmit) = "onSubmit(categoryForm)">
+        <div class="form-group col-md mb-3">
+          <input
+            type="text"
+            name="category"
+            class="form-control shadow-effect-card"
+            placeholder="Add new categories"
+            #newCategory='ngModel'
+            ngModel
+            required
+            [ngClass]="{ 'is-invalid': newCategory.touched && newCategory.invalid }"
+            >
+
+            <div class="alert alert-danger" *ngIf = " newCategory.touched && newCategory.invalid ">
+              Category field is required!
+            </div>
+        </div>
+
+        <div class="col-md">
+          <button class="btn btn-block btn-info mb-2 roboto-text btn-add-category" [disabled] = "categoryForm.invalid">
+            Add category
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
