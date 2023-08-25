@@ -15,6 +15,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 12px;
   color: var(--body-text-color);
+  display: contents;
 }
 
 .roboto-text {
@@ -38,6 +39,14 @@ body {
 }
 
 .bg-theme {
+  background-color: var(--primary-color);
+}
+
+.bg-secondary-theme {
+  background-color: var(--secondary-color);
+}
+
+.bg-primary-theme {
   background-color: var(--primary-color);
 }
 

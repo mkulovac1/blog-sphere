@@ -1,0 +1,24 @@
+p {
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  text-align: justify;
+}
+
+.btn-about {
+  height: 40px;
+  width: max-content;
+  border: none;
+  font-size: 13px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.btn-about a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.section-about {
+  margin-top: 20px;
+}
