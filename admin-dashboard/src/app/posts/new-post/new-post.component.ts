@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class NewPostComponent {
 
   permalink: string = ''
+  addedImage: any = './assets/placeholder-image.jpg'
 
   constructor() { }
 
@@ -19,5 +20,14 @@ export class NewPostComponent {
     const title = event.target.value;
     this.permalink = title.replace(/\s/g, '-')
     // console.log(this.permalink);
+  }
+
+  showPreviewImage(event) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      this.addedImage = e.target.result as string
+    }
+
+    reader.readAsDataURL(event.target.files[0])
   }
 }
