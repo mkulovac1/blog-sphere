@@ -13,6 +13,7 @@ export class CategoriesComponent {
   categoryArray: Array<object>
   formCategory: string
   formStatus: string = 'Add'
+  categoryId: string
 
   constructor(private categoryService: CategoriesService) { }
 
@@ -28,14 +29,20 @@ export class CategoriesComponent {
       category: formData.value.category
     }
 
-    this.categoryService.saveData(categoryData)
-
-    formData.reset()
+    if (this.formStatus == 'Add') {
+      this.categoryService.saveData(categoryData)
+      formData.reset()
+    } else if (this.formStatus == 'Edit') {
+      this.categoryService.updateData(this.categoryId, categoryData)
+      formData.reset()
+      this.formStatus = 'Add'
+    }
   }
 
-  onEdit(category) {
-    // console.log(category)
+  onEdit(id, category) {
+    // console.log(id, category)
     this.formCategory = category
+    this.categoryId = id
     this.formStatus = 'Edit'
   }
 }

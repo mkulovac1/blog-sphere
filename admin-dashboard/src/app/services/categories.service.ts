@@ -30,4 +30,11 @@ export class CategoriesService {
       })
     }))
   }
+
+  updateData(id, editData) {
+    this.afs.collection('categories').doc(id).update(editData).then(docRef => {
+      // console.log(docRef)
+      this.toastr.success('Category updated successfully', 'Success')
+    })
+  }
 }
