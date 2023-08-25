@@ -1,0 +1,17 @@
+.href-container a {
+  margin-right: 10px;
+}
+
+.href-container {
+  margin-bottom: 10px;
+}
+
+.comment-box {
+  padding: 15px 35px;
+  background-color: #f0f0f0;
+}
+
+h4 {
+  color: var(--primary-color);
+}
+

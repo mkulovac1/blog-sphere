@@ -1,0 +1,8 @@
+.btn-comment {
+  height: 58px;
+  width: 240px;
+  border: none;
+  font-size: 13px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}

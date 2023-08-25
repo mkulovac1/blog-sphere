@@ -17,6 +17,10 @@ body {
   color: var(--body-text-color);
 }
 
+.roboto-text {
+  font-family: 'Roboto', sans-serif;
+}
+
 .site-logo {
   padding: 5px 20px;
   border-radius: 20px;
@@ -36,3 +40,21 @@ body {
 .bg-theme {
   background-color: var(--primary-color);
 }
+
+.small-container small {
+  margin-right: 10px;
+}
+
+.small-container {
+  margin-bottom: 10px;
+}
+
+input[type = text], input[type = email] {
+  height: 60px;
+  padding-left: 20px;
+  font-size: 13px;
+  width: 100%;
+}
+
+
+
