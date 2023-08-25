@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CategoriesService } from 'src/app/services/categories.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-new-post',
@@ -8,13 +9,25 @@ import { CategoriesService } from 'src/app/services/categories.service';
 })
 export class NewPostComponent {
 
+  title: string = '';
   permalink: string = '';
   addedImage: any = './assets/placeholder-image.jpg';
   selectedImage: any;
 
   categories: Array<object>;
 
-  constructor(private categoryService: CategoriesService) { }
+  postForm: FormGroup;
+
+  constructor(private categoryService: CategoriesService, private fb: FormBuilder) {
+    this.postForm = this.fb.group({
+      title: ['', [Validators.required, Validators.minLength(10)]],
+      permalink: ['', Validators.required],
+      excerpt: ['', [Validators.required, Validators.minLength(50)]],
+      category: ['', Validators.required],
+      postImg: ['', Validators.required],
+      content: ['', Validators.required]
+    })
+  }
 
   ngOnInit(): void {
     this.categoryService.loadData().subscribe((givenData) => {
@@ -22,9 +35,13 @@ export class NewPostComponent {
     })
   }
 
+  get formControls() {
+    return this.postForm.controls;
+  }
+
   onTitleChanged(event) {
-    const title = event.target.value;
-    this.permalink = title.replace(/\s/g, '-');
+    this.title = event.target.value;
+    this.permalink = this.title.replace(/\s/g, '-');
     // console.log(this.permalink);
   }
 
