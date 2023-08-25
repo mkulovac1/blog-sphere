@@ -10,7 +10,7 @@
     </div>
   </div>
 
-  <form [formGroup]="postForm">
+  <form [formGroup]="postForm" (ngSubmit)='onSubmit()'>
     <div class="row">
       <div class="col-md-7">
         <div class="card shadow-effect-card">
@@ -37,7 +37,6 @@
                      class="form-control"
                      name="permalink"
                      [(ngModel)]="permalink"
-                     [disabled]="!title"
                      formControlName="permalink"
                      [ngClass] = "{'is-invalid': formControls.permalink.invalid && formControls.permalink.touched}"
                      >

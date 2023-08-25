@@ -55,4 +55,8 @@ export class NewPostComponent {
 
     this.selectedImage = event.target.files[0];
   }
+
+  onSubmit() {
+    console.log(this.postForm.value);
+  }
 }
