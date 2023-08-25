@@ -1,6 +1,7 @@
 .card {
   height: 200px;
   background-color: var(--secondary-color);
+  cursor: pointer;
 }
 
 h2 {
