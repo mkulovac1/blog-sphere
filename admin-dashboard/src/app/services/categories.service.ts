@@ -35,6 +35,19 @@ export class CategoriesService {
     this.afs.collection('categories').doc(id).update(editData).then(docRef => {
       // console.log(docRef)
       this.toastr.success('Category updated successfully', 'Success')
+    }).catch(err => {
+      // console.log(err)
+      this.toastr.error('Category not updated', 'Error')
+    })
+  }
+
+  deleteData(id) {
+    this.afs.collection('categories').doc(id).delete().then(docRef => {
+      // console.log(docRef)
+      this.toastr.success('Category deleted successfully', 'Success')
+    }).catch(err => {
+      // console.log(err)
+      this.toastr.error('Category not deleted', 'Error')
     })
   }
 }

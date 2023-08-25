@@ -21,6 +21,8 @@ p {
   background-color: var(--secondary-color);
 }
 
-
+.delete-category-btn {
+  margin-left: 5px;
+}
 
 

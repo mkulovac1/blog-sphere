@@ -45,4 +45,9 @@ export class CategoriesComponent {
     this.categoryId = id
     this.formStatus = 'Edit'
   }
+
+  onDelete(id) {
+    // console.log(id)
+    this.categoryService.deleteData(id)
+  }
 }
