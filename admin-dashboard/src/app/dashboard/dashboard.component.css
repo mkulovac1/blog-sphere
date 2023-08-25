@@ -1,0 +1,16 @@
+.card {
+  height: 200px;
+  background-color: var(--secondary-color);
+}
+
+h2 {
+  color: var(--primary-color);
+}
+
+p {
+  color: var(--body-text-color);
+}
+
+h1 .fa-solid.fa-clipboard-list {
+  color: var(--primary-color);
+}
