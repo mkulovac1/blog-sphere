@@ -13,7 +13,9 @@ export class CategoriesComponent {
   constructor(private categoryService: CategoriesService) { }
 
   ngOnInit() : void {
-
+    this.categoryService.loadData().subscribe(x => {
+      console.log(x)
+    })
   }
 
   onSubmit(formData) {
