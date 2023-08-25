@@ -39,6 +39,9 @@ export class CategoriesService {
       // console.log(err)
       this.toastr.error('Category not updated', 'Error')
     })
+
+    // or:
+    // this.afs.doc(`categories/${id}`).update(editData).then(docRef => { })
   }
 
   deleteData(id) {
