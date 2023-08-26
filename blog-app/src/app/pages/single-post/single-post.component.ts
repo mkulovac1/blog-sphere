@@ -13,12 +13,20 @@ export class SinglePostComponent {
   constructor(private route: ActivatedRoute, private postService: PostsService) { }
 
   singlePost: any;
+  similarPostsArray: Array<object> = [];
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.postService.loadOnePost(params.id).subscribe(post => {
         this.singlePost = post;
+        this.loadSimilarPosts(this.singlePost.category.categoryId);
       })
+    })
+  }
+
+  loadSimilarPosts(categoryId) {
+    this.postService.loadSimilar(categoryId).subscribe(posts => {
+      this.similarPostsArray = posts;
     })
   }
 }
