@@ -5,7 +5,7 @@
       <small class="bg-light text-danger text-center">
         {{ postData.data.category.category }}
       </small>
-      <small class="bg-light text-success text-center ml-3">
+      <small class="bg-light text-success text-center ml-3" *ngIf="postData.data.isFeatured">
         Featured
       </small>
       <small class="bg-light text-info text-center ml-3">

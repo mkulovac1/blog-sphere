@@ -8,7 +8,7 @@
             <small class="bg-light text-danger text-center">
               {{ singlePost.category.category }}
             </small>
-            <small class="bg-light text-success text-center ml-10">
+            <small class="bg-light text-success text-center ml-10" *ngIf="singlePost.isFeatured">
               Featured
             </small>
             <small class="bg-light text-info text-center ml-10">

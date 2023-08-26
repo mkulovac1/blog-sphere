@@ -16,6 +16,7 @@ export class SinglePostComponent {
   similarPostsArray: Array<object> = [];
 
   ngOnInit(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.route.params.subscribe(params => {
       this.postService.viewsCounter(params.id);
 
