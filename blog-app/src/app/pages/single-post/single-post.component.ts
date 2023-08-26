@@ -17,6 +17,8 @@ export class SinglePostComponent {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
+      this.postService.viewsCounter(params.id);
+
       this.postService.loadOnePost(params.id).subscribe(post => {
         this.singlePost = post;
         this.loadSimilarPosts(this.singlePost.category.categoryId);
