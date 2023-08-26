@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 import { Post } from 'src/app/models/post';
 
+import { PostsService } from 'src/app/services/posts.service';
+
 @Component({
   selector: 'app-new-post',
   templateUrl: './new-post.component.html',
@@ -20,7 +22,7 @@ export class NewPostComponent {
 
   postForm: FormGroup;
 
-  constructor(private categoryService: CategoriesService, private fb: FormBuilder) {
+  constructor(private categoryService: CategoriesService, private fb: FormBuilder, private postService: PostsService) {
     this.postForm = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(10)]],
       permalink: ['', Validators.required],
@@ -80,5 +82,7 @@ export class NewPostComponent {
     }
 
     // console.log(postData);
+
+    this.postService.uploadImage(this.selectedImage, postData);
   }
 }
