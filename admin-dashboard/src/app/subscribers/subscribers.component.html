@@ -36,10 +36,10 @@
             </thead>
 
             <tbody>
-              <tr>
-                <td>  </td>
-                <td> </td>
-                <td> </td>
+              <tr *ngFor="let s of subsArray; let i = index">
+                <td> {{ i+1 }} </td>
+                <td> {{ s.data.name }} </td>
+                <td> {{ s.data.email }} </td>
                 <td>
                   <button class="btn btn-sm btn-danger del-btn ml-2"> Delete </button>
                 </td>
