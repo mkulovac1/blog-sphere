@@ -10,3 +10,14 @@ a {
   text-decoration: none;
 }
 
+.logout-btn {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-color: black;
+  margin-left: 5px;
+}
+
+.logout-btn:hover {
+  background-color: #17a2b8;
+  color: white;
+}

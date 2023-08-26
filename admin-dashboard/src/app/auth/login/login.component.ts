@@ -19,6 +19,4 @@ export class LoginComponent {
     this.authService.login(values);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
-
 }

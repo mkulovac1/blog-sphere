@@ -1,7 +1,11 @@
 <header class="navbar navbar-expand-lg fixed-top bg-light">
   <div class="container justify-content-center">
-    <a href="#" class="site-logo text-center">
-      BLOG SPHERE <br> ADMIN DASHBOARD
-    </a>
+    <a href="#" class="site-logo text-center"> ADMIN </a>
   </div>
+
+  <div class="container justify-content-center" *ngIf="isLoggedIn$ | async">
+    <a href="#" class="mr-3"> {{ emailHeader }} </a>
+    <button class="btn btn-info btn-sm logout-btn" (click)="logout()"> Logout </button>
+  </div>
+
 </header>
