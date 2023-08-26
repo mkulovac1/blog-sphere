@@ -78,4 +78,10 @@ export class PostsService {
       this.toastr.warning('Post deleted successfully', 'Success');
     })
   }
+
+  flagFeatured(id, featuredData) {
+    this.afs.collection('posts').doc(id).update(featuredData).then(() => {
+      this.toastr.info('Post updated successfully');
+    })
+  }
 }

@@ -25,4 +25,13 @@ export class AllPostComponent {
       this.postService.deleteImageAndData(imgPath, id);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    onFeatured(id, value) {
+      const featuredData = {
+        isFeatured: value
+      }
+
+      this.postService.flagFeatured(id, featuredData);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 }

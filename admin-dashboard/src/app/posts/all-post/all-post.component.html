@@ -34,7 +34,7 @@
                 <th> No </th>
                 <th> Post image </th>
                 <th> Title </th>
-                <th> Excerpt </th>
+                <!-- <th> Excerpt </th> -->
                 <th> Category </th>
                 <th> Date </th>
                 <th> Actions </th>
@@ -46,12 +46,14 @@
                 <td width="10"> {{ i + 1}} </td>
                 <td width="200"> <img src="{{ p.data.postImgPath }}" alt="" class="img img-fluid"> </td>
                 <td width="200"> {{ p.data.title }} </td>
-                <td width="300"> {{ p.data.excerpt }} </td>
+                <!-- <td width="300"> {{ p.data.excerpt }} </td> -->
                 <td> {{ p.data.category.category }} </td>
                 <td> {{ p.data.createdAt.toMillis() | date }} </td>
                 <td>
                   <button class="btn btn-sm btn-warning" routerLink="/posts/new" [queryParams]="{id: p.id}"> Edit </button>
-                  <button class="btn btn-sm btn-danger del-btn" (click)="onDelete(p.data.postImgPath, p.id)"> Delete </button>
+                  <button class="btn btn-sm btn-danger del-btn ml-2" (click)="onDelete(p.data.postImgPath, p.id)"> Delete </button>
+                  <button *ngIf='!p.data.isFeatured' class="btn btn-sm btn-success suc-btn ml-2" (click)="onFeatured(p.id, true)"> Mark featured </button>
+                  <button *ngIf='p.data.isFeatured' class="btn btn-sm btn-info inf-btn ml-2" (click)="onFeatured(p.id, false)"> Remove featured </button>
                 </td>
               </tr>
             </tbody>

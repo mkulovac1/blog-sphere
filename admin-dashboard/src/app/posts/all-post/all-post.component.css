@@ -11,13 +11,7 @@
   margin-left: 5px;
 }
 
-.del-btn {
+.del-btn, .inf-btn, .suc-btn {
   margin-left: 5px;
 }
 
-@media (max-width: 1400px) {
-  .del-btn {
-    margin-top: 5px;
-    margin-left: 3px;
-  }
-}
