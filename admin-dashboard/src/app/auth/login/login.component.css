@@ -1,0 +1,29 @@
+.card {
+  background-color: var(--secondary-color);
+}
+
+.btn-login {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: whitesmoke;
+  align-self: center;
+  width: 300px;
+  height: 58px;
+}
+
+h3 {
+  color: var(--primary-color);
+}
+
+p {
+  color: var(--body-text-color);
+}
+
+.card-body {
+  align-items: center;
+  justify-content: center;
+}
+
+.form-control {
+  width: 300px;
+}
