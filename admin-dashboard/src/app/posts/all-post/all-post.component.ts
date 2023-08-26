@@ -1,4 +1,6 @@
+import { PostsService } from './../../services/posts.service';
 import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-all-post',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class AllPostComponent {
 
+    postArray: Array<object>;
+
+    constructor(private postService: PostsService) {}
+
+    ngOnInit() : void {
+      this.postService.loadData().subscribe((data) => {
+        // console.log(data);
+        this.postArray = data;
+      })
+    }
 }
