@@ -50,7 +50,7 @@ export class NewPostComponent {
 
             this.postForm = this.fb.group({
               title: [this.postData.title, [Validators.required, Validators.minLength(10)]],
-              permalink: [/*{value: this.postData.permalink, disabled: true}*/this.postData.permalink, Validators.required],
+              permalink: [{value: this.postData.permalink, disabled: true}/*this.postData.permalink*/, Validators.required],
               excerpt: [this.postData.excerpt, [Validators.required, Validators.minLength(50)]],
               category: [`${this.postData.category.categoryId}-${this.postData.category.category}`, Validators.required], // or id ?!
               postImg: ['', Validators.required],
@@ -65,7 +65,7 @@ export class NewPostComponent {
       else {
         this.postForm = this.fb.group({
         title: ['', [Validators.required, Validators.minLength(10)]],
-        permalink: [/*{value: '', disabled: true}*/ '', Validators.required],
+        permalink: [{value: '', disabled: true} /*''*/, Validators.required],
         excerpt: ['', [Validators.required, Validators.minLength(50)]],
         category: ['', Validators.required],
         postImg: ['', Validators.required],
@@ -104,8 +104,8 @@ export class NewPostComponent {
   }
 
   onSubmit() {
+    this.postForm.get('permalink').enable();
     // console.log(this.postForm.value);
-
     let categoryNameAndId = this.postForm.value.category.split('-');
 
     const postData: Post = {
