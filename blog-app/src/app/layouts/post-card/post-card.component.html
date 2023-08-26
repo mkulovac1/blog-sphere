@@ -1,37 +1,27 @@
-<div class="card shadow-effect-card">
-  <img
-    src="https://www.idfcfirstbank.com/content/dam/idfcfirstbank/images/blog/beyond-banking/what-is-the-impact-of-it-on-the-banking-sector-717x404.jpg"
-    alt="post-image"
-    class="card-img-top"
-  />
+<div class="card shadow-effect-card" *ngIf="postData">
+  <img src="{{ postData.data.postImgPath }}" alt="post-image" class="card-img-top" />
   <div class="card-body">
     <div class="small-container">
       <small class="bg-light text-danger text-center">
-        Inspiring
+        {{ postData.data.category.category }}
       </small>
       <small class="bg-light text-success text-center ml-3">
         Featured
       </small>
       <small class="bg-light text-info text-center ml-3">
-        Views - 100.256
+        Views - {{ postData.data.views }}
       </small>
     </div>
 
-    <h5 class="mt-1">
-      <a href="#" class="text-dark">
-        BREAKING NEWS: BANKING SECTOR IS GROWING!
-      </a>
-    </h5>
+    <h5 class="mt-1 text-dark"> {{ postData.data.title }} </h5>
 
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-      voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Quisquam, voluptatibus.
-    </p>
+    <p> {{ postData.data.excerpt }} </p>
+  </div>
 
-    <small class="bg-light text-warning text-center ml-3">
-      LAST UPDATED: AUG 24, 2023
+  <!-- Move the "LAST UPDATED" section here -->
+  <div class="card-footer bg-light">
+    <small class="text-warning text-center">
+      LAST UPDATED: {{ postData.data.createdAt.toMillis() | date }}
     </small>
   </div>
 </div>
-
