@@ -8,7 +8,7 @@
         <p class="m-auto subs-text">
           Please fill in the form below to subscribe to our newsletter for the latest news and updates.
         </p>
-        <form class="form-inline mb-5 mt-3" #subForm=ngForm>
+        <form class="form-inline mb-5 mt-3" #subForm=ngForm (ngSubmit)="onSubmit(subForm.value)">
           <div class="row justify-content-center">
             <div class="form-group col-md-5">
               <input type="text"
