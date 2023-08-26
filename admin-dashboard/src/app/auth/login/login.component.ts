@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -6,13 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor() { }
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
 
   }
 
   onSubmit(values) {
-    console.log(values);
+    // console.log(values);
+    this.authService.login(values);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+
+
 }
