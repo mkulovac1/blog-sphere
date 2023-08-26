@@ -51,6 +51,7 @@
                 <td> {{ p.data.createdAt.toMillis() | date }} </td>
                 <td>
                   <button class="btn btn-sm btn-warning" routerLink="/posts/new" [queryParams]="{id: p.id}"> Edit </button>
+                  <button class="btn btn-sm btn-danger del-btn" (click)="onDelete(p.data.postImgPath, p.id)"> Delete </button>
                 </td>
               </tr>
             </tbody>

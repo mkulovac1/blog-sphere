@@ -19,4 +19,10 @@ export class AllPostComponent {
         this.postArray = data;
       })
     }
+
+    onDelete(imgPath, id) {
+      // console.log(imgPath, id);
+      this.postService.deleteImageAndData(imgPath, id);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 }

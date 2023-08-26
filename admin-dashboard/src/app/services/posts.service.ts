@@ -66,4 +66,16 @@ export class PostsService {
       this.router.navigate(['/posts']);
     })
   }
+
+  deleteImageAndData(imgPath, id) {
+    this.storage.storage.refFromURL(imgPath).delete().then(() => {
+      this.deleteData(id)
+    })
+  }
+
+  deleteData(id) {
+    this.afs.collection('posts').doc(id).delete().then(() => {
+      this.toastr.warning('Post deleted successfully', 'Success');
+    })
+  }
 }
