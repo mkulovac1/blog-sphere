@@ -28,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './auth/login/login.component';
+import { SubscribersComponent } from './subscribers/subscribers.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { LoginComponent } from './auth/login/login.component';
     CategoriesComponent,
     AllPostComponent,
     NewPostComponent,
-    LoginComponent
+    LoginComponent,
+    SubscribersComponent
   ],
   imports: [
     BrowserModule,

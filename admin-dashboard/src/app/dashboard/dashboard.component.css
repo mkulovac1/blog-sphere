@@ -12,6 +12,6 @@ p {
   color: var(--body-text-color);
 }
 
-h1 .fa-solid.fa-clipboard-list {
+h1 .fa-solid.fa-clipboard-list, .fas.fa-file-image, .fas.fa-users {
   color: var(--primary-color);
 }

@@ -1,0 +1,17 @@
+.card {
+  background-color: var(--secondary-color);
+}
+
+.new-post-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.back-btn {
+  margin-left: 5px;
+}
+
+.del-btn, .inf-btn, .suc-btn {
+  margin-left: 5px;
+}
+
