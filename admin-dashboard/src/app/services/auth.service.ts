@@ -13,6 +13,8 @@ export class AuthService {
 
   loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
+  isLoggedInGuard: boolean = false;
+
   constructor(private afa: AngularFireAuth, private toastr: ToastrService, private router: Router) {
 
   }
@@ -23,6 +25,7 @@ export class AuthService {
       this.toastr.success('Logged in successfully!');
       this.loadUser();
       this.loggedIn.next(true);
+      this.isLoggedInGuard = true;
       this.router.navigate(['/']);
     }).catch(() => {
       this.toastr.error('Invalid email or password!');
@@ -45,6 +48,7 @@ export class AuthService {
       this.toastr.success('Logged out successfully!');
       localStorage.removeItem('user');
       this.loggedIn.next(false);
+      this.isLoggedInGuard = false;
       this.router.navigate(['/login']);
     }).catch(() => {
       this.toastr.error('Something went wrong!');

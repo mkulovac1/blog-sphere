@@ -1,9 +1,9 @@
 <header class="navbar navbar-expand-lg fixed-top bg-light">
   <div class="container justify-content-center">
-    <a href="#" class="site-logo text-center"> ADMIN </a>
+    <a class="site-logo text-center"> ADMIN </a>
   </div>
 
-  <div class="container justify-content-center" *ngIf="isLoggedIn$ | async">
+  <div class="container justify-content-center" *ngIf="isLoggedIn$ | async"> <!-- using async we are subscribing on BehaviorSubject observable object -->
     <a href="#" class="mr-3"> {{ emailHeader }} </a>
     <button class="btn btn-info btn-sm logout-btn" (click)="logout()"> Logout </button>
   </div>
