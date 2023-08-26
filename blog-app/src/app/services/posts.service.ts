@@ -42,4 +42,8 @@ export class PostsService {
       })
     }))
   }
+
+  loadOnePost(postId) {
+    return this.afs.collection('posts').doc(postId).valueChanges()
+  }
 }

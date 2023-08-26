@@ -2,38 +2,26 @@
   <div class="row">
     <div class="col-md-9">
       <div class="card shadow-effect-card">
-        <img src="https://www.sportscasting.com/wp-content/uploads/2022/04/Ayrton-Senna.jpg" alt="" class="card-img-top img-fluid">
+        <img src="{{ singlePost.postImgPath }}" alt="" class="card-img-top img-fluid">
         <div class="card-body">
           <div class="small-container">
             <small class="bg-light text-danger text-center">
-              Inspiring
+              {{ singlePost.category.category }}
             </small>
             <small class="bg-light text-success text-center ml-10">
               Featured
             </small>
             <small class="bg-light text-info text-center ml-10">
-              Views - 99.345
+              Views - {{ singlePost.views }}
             </small>
             <small class="bg-light text-warning text-center ml-10">
-              LAST UPDATED - AUG 25, 2023
+              LAST UPDATED - {{ singlePost.createdAt.toMillis() | date }}
             </small>
           </div>
 
-          <h1 class="mt-3 mb-3">
-            Ayrton Senna (G.O.A.T)
-          </h1>
+          <h1 class="mt-3 mb-3"> {{ singlePost.title }} </h1>
 
-          <p>
-            Brazilian race-car driver Ayrton Senna gained fame for being a fierce competitor renowned for his ruthless and risky maneuvers on the Grand Prix circuit. He rose quickly through the ranks of professional racing, capturing 41 Grand Prix titles and 3 circuit world championships (1988, 1990, and 1991). His career ended tragically when he died in a crash during the 1994 San Marino Grand Prix. (See also automobile racing and rallies.)
-
-            Ayrton Senna da Silva was born on March 21, 1960, in São Paulo, Brazil. The son of a wealthy businessman, he discovered his love of racing at the age of four when his father introduced him to the world of go-karting. At the age of 10, he received his first full-size go-kart and began racing as soon as he was legally allowed at age 13. Senna won the South American Kart Championship in 1977 and 1978.
-
-            In 1981 Senna moved to England to race at the Formula Ford 1600 level for the Van Diemen team. He won several races but left briefly at the end of the season to join the family business. However, he returned a short time later to drive Formula Ford 2000 in England the next season. In 1983 he moved to Formula Three racing, the second tier of professional racing. Driving for the West Surrey Racing Team, he won the national championship and the Macau Grand Prix. In 1984 he began driving Formula One for Toleman. In his first year he placed second at the Monaco Grand Prix (although he had taken the lead at the end of the race, it was canceled midway due to bad weather, and a scoring technicality placed him in second).
-
-            Looking for a better car, Senna moved to Lotus in 1985. That year he won the Portuguese Grand Prix and the Circuit de Spa-Francorchamps in Belgium, finishing fourth in the season. In 1988 he joined McLaren. During his six seasons with the team, he won 35 races and 3 world championships. Around this time his rivalry with former teammate Alain Prost became fierce and well known.
-
-            Senna died during the San Marino Grand Prix on May 1, 1994, in Imola, Italy, when he crashed into a concrete barrier and suffered massive head injuries. His death, combined with the similar crash death of Austrian driver Roland Ratzenberger the day before, caused the public to view professional racing as unsafe for many years.
-          </p>
+          <p [innerHtml] = "singlePost.content" > </p>
 
         </div>
       </div>
