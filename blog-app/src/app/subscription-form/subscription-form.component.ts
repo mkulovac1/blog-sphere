@@ -10,6 +10,9 @@ import { SubscribersService } from '../services/subscribers.service';
 
 export class SubscriptionFormComponent {
 
+  isEmailExist: boolean = false;
+  isSubs: boolean = false;
+
   constructor(private subsService: SubscribersService) { }
 
   ngOnInit(): void {
@@ -22,6 +25,16 @@ export class SubscriptionFormComponent {
       email: formValues.email
     }
 
-    this.subsService.addSubs(subsData);
+    this.subsService.checkSubs(subsData.email).subscribe((res) => {
+      if(res.empty) {
+        this.subsService.addSubs(subsData);
+        this.isSubs = true;
+        this.isEmailExist = false;
+      }
+      else {
+        this.isEmailExist = true;
+        this.isSubs = false;
+      }
+    })
   }
 }

@@ -11,7 +11,11 @@ export class SubscribersService {
 
   addSubs(subsData) {
     this.afs.collection('subscribers').add(subsData).then(() => {
-      console.log('Subscriber Added Successfully');
+      // console.log('Subscriber Added Successfully');
     })
+  }
+
+  checkSubs(email) {
+    return this.afs.collection('subscribers', ref => ref.where('email', '==', email)).get();
   }
 }
