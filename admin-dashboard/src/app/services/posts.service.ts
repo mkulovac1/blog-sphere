@@ -13,9 +13,13 @@ import { Router } from '@angular/router';
 })
 export class PostsService {
 
-  constructor( private storage: AngularFireStorage, private afs: AngularFirestore, private toastr: ToastrService, private router: Router ) { }
+  constructor( private storage: AngularFireStorage,
+               private afs: AngularFirestore,
+               private toastr: ToastrService,
+               private router: Router
+               ) { }
 
-  uploadImage(selectedImage, postData) {
+  uploadImage(selectedImage, postData, formStatus, id) {
     const filePath = `postImg/${Date.now()}` // beacuse this is a date so it will be unique
     // console.log(filePath);
     this.storage.upload(filePath, selectedImage).then(() => {
@@ -23,7 +27,13 @@ export class PostsService {
 
     this.storage.ref(filePath).getDownloadURL().subscribe((url) => {
         postData.postImgPath = url; // mutable
-        this.saveData(postData);
+
+        if(formStatus == 'Edit') {
+          this.updateData(id, postData);
+        }
+        else {
+          this.saveData(postData);
+        }
       })
     })
   }
@@ -44,5 +54,16 @@ export class PostsService {
         return { id, data }
       })
     }))
+  }
+
+  loadSingleData(params) {
+    return this.afs.collection('posts').doc(params).valueChanges();
+  }
+
+  updateData(id, editedPost) {
+    this.afs.collection('posts').doc(id).update(editedPost).then(() => {
+      this.toastr.success('Post updated successfully', 'Success');
+      this.router.navigate(['/posts']);
+    })
   }
 }

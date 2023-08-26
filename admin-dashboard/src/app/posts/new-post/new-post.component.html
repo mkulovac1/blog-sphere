@@ -2,10 +2,10 @@
   <div class="row">
     <div class="col-md-12 text-center mt-5">
       <h3>
-        Add new post
+        {{ formStatus }} post
       </h3>
       <p class="mb-5">
-        You can add your new post here.
+        You can {{ formStatus }} your new post here.
       </p>
     </div>
   </div>
@@ -109,7 +109,7 @@
 
       <div class="col-md-12 text-center mb-5 mt-3">
         <button class="btn btn-info save-post-btn" [disabled] = 'postForm.invalid' (click)="scrollToTheTop()">
-          Save post
+          {{ formStatus }} post
         </button>
         <button class="btn btn-warning back-posts-btn" routerLink="/posts">
           Back to posts
