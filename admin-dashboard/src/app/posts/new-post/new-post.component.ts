@@ -84,5 +84,12 @@ export class NewPostComponent {
     // console.log(postData);
 
     this.postService.uploadImage(this.selectedImage, postData);
+
+    this.postForm.reset();
+    this.addedImage = './assets/placeholder-image.jpg';
+  }
+
+  scrollToTheTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }

@@ -108,7 +108,7 @@
       </div>
 
       <div class="col-md-12 text-center mb-5 mt-3">
-        <button class="btn btn-info save-post-btn" [disabled] = 'postForm.invalid'>
+        <button class="btn btn-info save-post-btn" [disabled] = 'postForm.invalid' (click)="scrollToTheTop()">
           Save post
         </button>
         <button class="btn btn-warning back-posts-btn" routerLink="/posts">
