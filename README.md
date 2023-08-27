@@ -10,7 +10,7 @@
   <h3 align="center">Blog Sphere</h3>
 
   <p align="center">
-    Web application for music
+    Web application for blogging
     <br />
     <a href="https://github.com/mkulovac1/blog-sphere"><strong>Explore the docs »</strong></a>
     <br />
