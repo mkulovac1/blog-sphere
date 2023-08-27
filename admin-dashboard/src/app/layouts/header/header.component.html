@@ -1,11 +1,44 @@
-<header class="navbar navbar-expand-lg fixed-top bg-light">
-  <div class="container justify-content-center">
+<!-- /<header class="navbar navbar-expand-lg fixed-top bg-light">
+
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="site-logo text-center"> ADMIN </a>
+    <div *ngIf="isLoggedIn$ | async">
+      <a class="mr-3"> {{ emailHeader }} </a>
+      <button class="btn btn-info btn-sm logout-btn" (click)="logout()"> Logout </button>
+    </div>
+  </div>
+
+</header> -->
+
+<!-- <header class="navbar navbar-expand-lg fixed-top bg-light">
+
+  <div class="container d-flex justify-content-between align-items-center" *ngIf="isLoggedIn$ | async">
+    <a class="site-logo text-center"> ADMIN </a>
+    <div *ngIf="isLoggedIn$ | async">
+      <a class="mr-3"> {{ emailHeader }} </a>
+      <button class="btn btn-info btn-sm logout-btn" (click)="logout()"> Logout </button>
+    </div>
+  </div>
+
+  <div class="container justify-content-center" *ngIf="!isLoggedIn$ | async">
     <a class="site-logo text-center"> ADMIN </a>
   </div>
 
-  <div class="container justify-content-center" *ngIf="isLoggedIn$ | async"> <!-- using async we are subscribing on BehaviorSubject observable object -->
-    <a href="#" class="mr-3"> {{ emailHeader }} </a>
-    <button class="btn btn-info btn-sm logout-btn" (click)="logout()"> Logout </button>
+
+</header> -->
+
+<header class="navbar navbar-expand-lg fixed-top bg-light">
+  <div class="container d-flex justify-content-between align-items-center" *ngIf="(isLoggedIn$ | async); else notLoggedIn">
+    <a class="site-logo text-center">ADMIN</a>
+    <div>
+      <a class="mr-3">{{ emailHeader }}</a>
+      <button class="btn btn-info btn-sm logout-btn" (click)="logout()">Logout</button>
+    </div>
   </div>
 
+  <ng-template #notLoggedIn>
+    <div class="container justify-content-center">
+      <a class="site-logo text-center">ADMIN</a>
+    </div>
+  </ng-template>
 </header>
