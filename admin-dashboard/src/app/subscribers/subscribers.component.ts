@@ -17,4 +17,8 @@ export class SubscribersComponent {
         this.subsArray = data;
       })
     }
+
+    onDelete(id) {
+      this.subsService.deleteData(id);
+    }
 }

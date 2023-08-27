@@ -25,12 +25,12 @@ export class AuthGuard {
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
     if(this.authService.isLoggedInGuard) {
-      console.log(this.authService.isLoggedInGuard);
+      // console.log(this.authService.isLoggedInGuard);
       return true;
     }
     else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      console.log(this.authService.isLoggedInGuard);
+      // console.log(this.authService.isLoggedInGuard);
       this.toastr.warning('You must be logged in to access this page!');
       this.router.navigate(['/login']);
       return false;
