@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://blog-sphere-f613f.web.app/">
+  <a href="https://blogsphereapp.netlify.app/">
     <img src="documentation/logo.png" alt="Logo" width="320" height="240">
   </a>
 
@@ -40,7 +40,7 @@ You can see a demo of this application on the following link: [CLICK ME]()
 
 
 ## Deployment
-You can see this user's side app deployed on the link: [CLICK ME](https://blog-sphere-f613f.web.app/)
+You can see this user's side app deployed on the link: [CLICK ME](https://blogsphereapp.netlify.app/)
 
 
 You can see this admin's side app deployed on the link: [CLICK ME](https://blog-sphere-admin.web.app/)
