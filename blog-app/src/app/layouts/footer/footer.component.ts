@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  top() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

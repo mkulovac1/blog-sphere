@@ -1,1 +1,11 @@
-{}
+{
+  "hosting": {
+    "target": "blogSphereAdminDashboard",
+    "public": "admin-dashboard",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
